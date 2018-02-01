@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="GB2312" ?>
+<TaskDefinition ID="jetlab_tdf 1.0">
+	<Task Name="ZhengJiCeShi" GUID="06BE2543E3240234" BaseStepSize="0.0025" SingleTasking="true" StackSize=0/>
+	<Help>
+		<DataType>
+			<Item Name="double" Size="8" />
+			<Item Name="float" Size="4" />
+			<Item Name="char" Size="1" />
+			<Item Name="int8" Size="1" />
+			<Item Name="uint8" Size="1" />
+			<Item Name="int16" Size="2" />
+			<Item Name="uint16" Size="2" />
+			<Item Name="int32" Size="4" />
+			<Item Name="uint32" Size="4" />
+			<Item Name="int64" Size="8" />
+			<Item Name="uint64" Size="8" />
+			<Item Name="bool" Size="1" />
+			<Item Name="BOOL" Size="4" />
+		</DataType>
+	</Help>
+
+	<SampleRates>
+		<!-- <TID No="0" Multiple="1" /> -->
+		<TID No="0" Multiple="1" />
+	</SampleRates>
+
+	<Parameters>
+		<!-- <Item CodeName="g_dSineA" ItemName="SineA" DataType="double" Width="1" Path="/" Enable="0"/> -->
+    <Item CodeName="g_dDA" ItemName="DA输出" DataType="double" Width="16" Path="/设置" Enable="0"/>
+    <Item CodeName="g_ucDO" ItemName="DO输出" DataType="uint8" Width="32" Path="/设置" Enable="0"/>
+    <Item CodeName="g_ucAmpSample" ItemName="采集电流" DataType="uint8" Width="1" Path="/设置" Enable="0"/>
+    <Item CodeName="g_ulTestCaseNo" ItemName="测试项目" DataType="uint32" Width="1" Path="/" Enable="1"/>
+    <Item CodeName="g_dFreq" ItemName="输入频率" DataType="double" Width="1" Path="/" Enable="1"/>
+    <Item CodeName="dDAInputTest" ItemName="DA手动输入" DataType="float" Width="1" Path="/" Enable="0"/>
+
+    <Item CodeName="DI_DO" ItemName="开关量DO" DataType="bool" Width="1" Path="/开关量输入" Enable="1"/>
+    <Item CodeName="g_IMUTickFlag" ItemName="IMUTickFlag" DataType="uint8" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+    <Item CodeName="g_RunTimes" ItemName="报表第几次" DataType="uint8" Width="1" Path="/" Enable="1"/>
+    
+  </Parameters>
+
+	<Variables>
+		<!-- <Item CodeName="g_dSine" ItemName="Sine" DataType="double" Width="1" TID="0" Path="/S1/S11/S113" /> -->
+    
+    <Item CodeName="lFlag" ItemName="当前子项目状态" DataType="uint32" Width="1" TID="0" Path="/" Enable="1"/>
+
+    <Item CodeName="ADValue[0][AD0::DY27电源27V2输出电压监视]" ItemName="27VA" DataType="double" Width="1" TID="0" Path="/" Enable="1"/>
+    <Item CodeName="ADValue[0][AD0::DY27电源27V3输出电压监视]" ItemName="27VB" DataType="double" Width="1" TID="0" Path="/" Enable="1"/>
+    <Item CodeName="ADValue[0][AD0::XGLDY小功率60V电源输出电压监视]" ItemName="60VC" DataType="double" Width="1" TID="0" Path="/" Enable="1"/>
+    
+    <Item CodeName="g_ReadValue" ItemName="ReadValue" DataType="double" Width="9" TID="0" Path="/电源遥测" Enable="1"/>
+    <Item CodeName="ADValue[0][AD0::GCZ15惯测正15V遥测]" ItemName="惯测+15V遥测" DataType="double" Width="1" TID="0" Path="/电源遥测" Enable="1"/>
+    <Item CodeName="ADValue[0][AD0::GCF15惯测负15V遥测]" ItemName="惯测-15V遥测" DataType="double" Width="1" TID="0" Path="/电源遥测" Enable="1"/>
+    <Item CodeName="ADValue[0][AD0::GCZ5惯测正5V遥测]" ItemName="惯测+5V遥测" DataType="double" Width="1" TID="0" Path="/电源遥测" Enable="1"/>
+    <Item CodeName="ADValue[0][AD0::GCF5惯测负5V遥测]" ItemName="惯测-5V遥测" DataType="double" Width="1" TID="0" Path="/电源遥测" Enable="1"/>
+    <Item CodeName="ADValue[0][AD0::Z5VYC主5V遥测]" ItemName="主5V遥测" DataType="double" Width="1" TID="0" Path="/电源遥测" Enable="1"/>
+    <Item CodeName="ADValue[0][AD0::Z15VYC正15V遥测]" ItemName="+15V遥测" DataType="double" Width="1" TID="0" Path="/电源遥测" Enable="1"/>
+    <Item CodeName="ADValue[0][AD0::F15VYC负15V遥测]" ItemName="-15V遥测" DataType="double" Width="1" TID="0" Path="/电源遥测" Enable="1"/>
+    <Item CodeName="ADValue[0][AD0::DQKZ电气控制正5V1遥测]" ItemName="电气控制+5V1遥测" DataType="double" Width="1" TID="0" Path="/电源遥测" Enable="1"/>
+    <Item CodeName="ADValue[0][AD0::DQKZ电气控制正5V2遥测]" ItemName="电气控制+5V2遥测" DataType="double" Width="1" TID="0" Path="/电源遥测" Enable="1"/>
+    
+    <Item CodeName="g_FlagRAM" ItemName="RAM状态" DataType="uint32" Width="2" TID="0" Path="/FLASH_RAM" Enable="1"/>
+    <Item CodeName="g_RAMAdress" ItemName="RAM失败地址" DataType="uint32" Width="2" TID="0" Path="/FLASH_RAM" Enable="1"/>
+    <Item CodeName="g_FlashNum" ItemName="FLASH块数" DataType="uint32" Width="4" TID="0" Path="/FLASH_RAM" Enable="1"/>
+    <Item CodeName="g_FlashClear" ItemName="FLASH擦除成功" DataType="uint32" Width="4" TID="0" Path="/FLASH_RAM" Enable="1"/>
+    <Item CodeName="g_FlashWrite" ItemName="FLASH写入成功" DataType="uint32" Width="4" TID="0" Path="/FLASH_RAM" Enable="1"/>
+    <Item CodeName="g_FailAdress" ItemName="FLASH写入失败地址" DataType="uint32" Width="4" TID="0" Path="/FLASH_RAM" Enable="1"/>
+    <Item CodeName="g_FLASH" ItemName="报表FLASH" DataType="uint8" Width="1" TID="0" Path="/FLASH_RAM" Enable="1"/>
+    <Item CodeName="g_FLASHClose" ItemName="报表FLASHClose" DataType="uint8" Width="1" TID="0" Path="/FLASH_RAM" Enable="1"/>
+    <Item CodeName="g_SRAM" ItemName="报表SRAM" DataType="uint8" Width="1" TID="0" Path="/FLASH_RAM" Enable="1"/>
+    
+    
+    <Item CodeName="g_TimeKO7" ItemName="KO7上电时间" DataType="double" Width="1" TID="0" Path="/上电时间" Enable="1"/>
+    <Item CodeName="g_TimeTurnOn" ItemName="开机时间" DataType="double" Width="1" TID="0" Path="/上电时间" Enable="1"/>
+
+    <Item CodeName="g_IMUPowerStart" ItemName="IMU启动电流" DataType="double" Width="3" TID="0" Path="/IMU惯组" Enable="1"/>
+    <Item CodeName="g_IMUPowerRunState" ItemName="IMU稳定电流" DataType="double" Width="3" TID="0" Path="/IMU惯组" Enable="1"/>
+    <Item CodeName="g_IMUTickFlag0" ItemName="IMUTickFlag0" DataType="uint8" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+    <Item CodeName="g_IMUTickBegin" ItemName="IMUTickBegin" DataType="uint32" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+    <Item CodeName="g_IMUTickEnd" ItemName="IMUTickEnd" DataType="uint32" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+    <Item CodeName="g_IMUCount" ItemName="IMU_CNT" DataType="uint16" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+    <Item CodeName="g_IMUCountRecv" ItemName="接收帧数" DataType="uint32" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+    <Item CodeName="g_IMUCountLoss" ItemName="丢失帧数" DataType="uint32" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+
+    <Item CodeName="g_YTH.m_fdWx" ItemName="X轴角增量" DataType="float" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+    <Item CodeName="g_YTH.m_fdWy" ItemName="Y轴角增量" DataType="float" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+    <Item CodeName="g_YTH.m_fdWz" ItemName="Z轴角增量" DataType="float" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+    <Item CodeName="g_YTH.m_fdVx" ItemName="X轴速度增量" DataType="float" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+    <Item CodeName="g_YTH.m_fdVy" ItemName="Y轴速度增量" DataType="float" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+    <Item CodeName="g_YTH.m_fdVz" ItemName="Z轴速度增量" DataType="float" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+    
+    <Item CodeName="g_YTH.m_fWx" ItemName="X轴角速度" DataType="float" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+    <Item CodeName="g_YTH.m_fWy" ItemName="Y轴角速度" DataType="float" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+    <Item CodeName="g_YTH.m_fWz" ItemName="Z轴角速度" DataType="float" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+    <Item CodeName="g_YTH.m_fNx" ItemName="X轴加速度" DataType="float" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+    <Item CodeName="g_YTH.m_fNy" ItemName="Y轴加速度" DataType="float" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+    <Item CodeName="g_YTH.m_fNz" ItemName="Z轴加速度" DataType="float" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>    
+    <Item CodeName="g_YTH.m_fTemperature" ItemName="惯组内温度" DataType="float" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+    <Item CodeName="g_YTH.m_ucStatus_XTuoLuo" ItemName="X陀螺" DataType="uint8" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+    <Item CodeName="g_YTH.m_ucStatus_YTuoLuo" ItemName="Y陀螺" DataType="uint8" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+    <Item CodeName="g_YTH.m_ucStatus_ZTuoLuo" ItemName="Z陀螺" DataType="uint8" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+    <Item CodeName="g_YTH.m_ucStatus_XJiaBiao" ItemName="X加表" DataType="uint8" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+    <Item CodeName="g_YTH.m_ucStatus_YJiaBiao" ItemName="Y加表" DataType="uint8" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+    <Item CodeName="g_YTH.m_ucStatus_ZJiaBiao" ItemName="Z加表" DataType="uint8" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+    <Item CodeName="g_YTH.m_ucStatus_Temperature" ItemName="工作温度检查" DataType="uint8" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+    <Item CodeName="g_YTH.m_ucStatus_ParamCheck" ItemName="加载参数检查" DataType="uint8" Width="1" TID="0" Path="/IMU惯组" Enable="1"/>
+
+    <Item CodeName="dDAInputValue" ItemName="DA输入值" DataType="float" Width="1" TID="0" Path="/DA转换精度" Enable="1"/>
+    <Item CodeName="g_DAValue" ItemName="AD采集值" DataType="double" Width="80" TID="0" Path="/DA转换精度" Enable="1"/>
+    <Item CodeName="DADA11" ItemName="DA11" DataType="double" Width="1" TID="0" Path="/DA转换精度" Enable="0"/>
+    
+    
+    <Item CodeName="ADValue[1][AD1::DZL舵指令U1遥测]" ItemName="舵指令U1遥测" DataType="double" Width="1" TID="0" Path="/DA转换精度" Enable="1"/>
+    <Item CodeName="ADValue[1][AD1::DZL舵指令U2遥测]" ItemName="舵指令U2遥测" DataType="double" Width="1" TID="0" Path="/DA转换精度" Enable="1"/>
+    <Item CodeName="ADValue[1][AD1::DZL舵指令U3遥测]" ItemName="舵指令U3遥测" DataType="double" Width="1" TID="0" Path="/DA转换精度" Enable="1"/>
+    <Item CodeName="ADValue[1][AD1::DZL舵指令U4遥测]" ItemName="舵指令U4遥测" DataType="double" Width="1" TID="0" Path="/DA转换精度" Enable="1"/>
+    <Item CodeName="ADValue[1][AD1::DZL舵指令U1]" ItemName="舵指令U1(采集)" DataType="double" Width="1" TID="0" Path="/DA转换精度" Enable="1"/>
+    <Item CodeName="ADValue[1][AD1::DZL舵指令U2]" ItemName="舵指令U2(采集)" DataType="double" Width="1" TID="0" Path="/DA转换精度" Enable="1"/>
+    <Item CodeName="ADValue[1][AD1::DZL舵指令U3]" ItemName="舵指令U3(采集)" DataType="double" Width="1" TID="0" Path="/DA转换精度" Enable="1"/>
+    <Item CodeName="ADValue[1][AD1::DZL舵指令U4]" ItemName="舵指令U4(采集)" DataType="double" Width="1" TID="0" Path="/DA转换精度" Enable="1"/>
+   
+    
+    <Item CodeName="g_Count_Wrong" ItemName="串口错误计数" DataType="uint32" Width="1" TID="0" Path="/串口测试" Enable="1"/>
+    <Item CodeName="g_Count" ItemName="串口发送计数" DataType="uint32" Width="1" TID="0" Path="/串口测试" Enable="1"/>
+    <Item CodeName="g_Count_Recv" ItemName="串口接收计数" DataType="uint32" Width="1" TID="0" Path="/串口测试" Enable="1"/>
+    <Item CodeName="g_COMErrorRate" ItemName="串口错误率" DataType="double" Width="1" TID="0" Path="/串口测试" Enable="1"/>
+    
+    <Item CodeName="bTimerState" ItemName="寄存器状态" DataType="bool" Width="5" TID="0" Path="/CPU和寄存器" Enable="1"/>
+    <Item CodeName="bRegisterWrong" ItemName="寄存器回帧2" DataType="bool" Width="1" TID="0" Path="/CPU和寄存器" Enable="1"/>
+    <Item CodeName="CPU_ID" ItemName="CPU_ID" DataType="uint32" Width="1" TID="0" Path="/建立连接" Enable="1"/>
+    <Item CodeName="CPU_Rev_ID" ItemName="CPU_Rev_ID" DataType="uint32" Width="1" TID="0" Path="/建立连接" Enable="1"/>
+    
+    <Item CodeName="DI_KI[0][2]" ItemName="KI3A_0" DataType="bool" Width="1" TID="0" Path="/开关量" Enable="1"/> 
+    <Item CodeName="DI_KI[0][7]" ItemName="KI3B_0" DataType="bool" Width="1" TID="0" Path="/开关量" Enable="1"/>  
+    <Item CodeName="DI_KI[0][3]" ItemName="KI4_0" DataType="bool" Width="1" TID="0" Path="/开关量" Enable="1"/>
+    <Item CodeName="DI_KI[0][4]" ItemName="KI5_0" DataType="bool" Width="1" TID="0" Path="/开关量" Enable="1"/>
+    <Item CodeName="DI_KI[0][5]" ItemName="KI6_0" DataType="bool" Width="1" TID="0" Path="/开关量" Enable="1"/>
+    <Item CodeName="DI_KI[0][6]" ItemName="KI7_0" DataType="bool" Width="1" TID="0" Path="/开关量" Enable="1"/>
+    <Item CodeName="DI_KI[0][0]" ItemName="DDK11_0" DataType="bool" Width="1" TID="0" Path="/开关量" Enable="1"/>
+    <Item CodeName="DI_KI[0][1]" ItemName="DDK12_0" DataType="bool" Width="1" TID="0" Path="/开关量" Enable="1"/>
+
+    <Item CodeName="DI_DDK2_YC[0]" ItemName="DI_DDK2_YC_0" DataType="bool" Width="1" TID="0" Path="/开关量" Enable="1"/>
+    <Item CodeName="DI_DDK2_JC[0]" ItemName="DI_DDK2_JC_0" DataType="double" Width="1" TID="0" Path="/开关量" Enable="1"/>
+    <Item CodeName="DI_DDK11_YC[0]" ItemName="DI_DDK11_YC_0" DataType="double" Width="1" TID="0" Path="/开关量" Enable="1"/>
+    <Item CodeName="DI_DDK12_YC[0]" ItemName="DI_DDK12_YC_0" DataType="double" Width="1" TID="0" Path="/开关量" Enable="1"/>
+    <Item CodeName="DI_KO7[0]" ItemName="DI_KO7_0" DataType="double" Width="1" TID="0" Path="/开关量" Enable="1"/>
+
+    <Item CodeName="DI_KI[1][2]" ItemName="KI3A_1" DataType="bool" Width="1" TID="0" Path="/开关量" Enable="1"/>
+    <Item CodeName="DI_KI[1][7]" ItemName="KI3B_1" DataType="bool" Width="1" TID="0" Path="/开关量" Enable="1"/>
+    <Item CodeName="DI_KI[1][3]" ItemName="KI4_1" DataType="bool" Width="1" TID="0" Path="/开关量" Enable="1"/>
+    <Item CodeName="DI_KI[1][4]" ItemName="KI5_1" DataType="bool" Width="1" TID="0" Path="/开关量" Enable="1"/>
+    <Item CodeName="DI_KI[1][5]" ItemName="KI6_1" DataType="bool" Width="1" TID="0" Path="/开关量" Enable="1"/>
+    <Item CodeName="DI_KI[1][6]" ItemName="KI7_1" DataType="bool" Width="1" TID="0" Path="/开关量" Enable="1"/>
+    <Item CodeName="DI_KI[1][0]" ItemName="DDK11_1" DataType="bool" Width="1" TID="0" Path="/开关量" Enable="1"/>
+    <Item CodeName="DI_KI[1][1]" ItemName="DDK12_1" DataType="bool" Width="1" TID="0" Path="/开关量" Enable="1"/>
+
+    <Item CodeName="DI_DDK2_YC[1]" ItemName="DI_DDK2_YC_1" DataType="bool" Width="1" TID="0" Path="/开关量" Enable="1"/>
+    <Item CodeName="DI_DDK2_JC[1]" ItemName="DI_DDK2_JC_1" DataType="double" Width="1" TID="0" Path="/开关量" Enable="1"/>
+    <Item CodeName="DI_DDK11_YC[1]" ItemName="DI_DDK11_YC_1" DataType="double" Width="1" TID="0" Path="/开关量" Enable="1"/>
+    <Item CodeName="DI_DDK12_YC[1]" ItemName="DI_DDK12_YC_1" DataType="double" Width="1" TID="0" Path="/开关量" Enable="1"/>
+    <Item CodeName="DI_KO7[1]" ItemName="DI_KO7_1" DataType="double" Width="1" TID="0" Path="/开关量" Enable="1"/>
+     
+    <Item CodeName="ADValue[1][AD1::JHH激活好]" ItemName="激活好" DataType="double" Width="1" TID="0" Path="/激活好" Enable="1"/>
+    <Item CodeName="g_27VA_up" ItemName="27VA_up" DataType="double" Width="1" TID="0" Path="/激活好" Enable="1"/>
+    <Item CodeName="g_27VA_Down" ItemName="27VA_Down" DataType="double" Width="1" TID="0" Path="/激活好" Enable="1"/>
+    <Item CodeName="g_27VB_up" ItemName="27VB_up" DataType="double" Width="1" TID="0" Path="/激活好" Enable="1"/>
+    <Item CodeName="g_27VB_Down" ItemName="27VB_Down" DataType="double" Width="1" TID="0" Path="/激活好" Enable="1"/>
+    <Item CodeName="g_60VC_up" ItemName="60VC_up" DataType="double" Width="1" TID="0" Path="/激活好" Enable="1"/>
+    <Item CodeName="g_60VC_Down" ItemName="60VC_Down" DataType="double" Width="1" TID="0" Path="/激活好" Enable="1"/>
+    <Item CodeName="g_JHH_ValueA" ItemName="输出电流" DataType="double" Width="1" TID="0" Path="/激活好" Enable="1"/>
+    <Item CodeName="g_JHH_Value1" ItemName="激活好+" DataType="double" Width="1" TID="0" Path="/激活好" Enable="1"/>
+    <Item CodeName="g_JHH_Value2" ItemName="激活好-" DataType="double" Width="1" TID="0" Path="/激活好" Enable="1"/>
+
+    <Item CodeName="g_DDK2_GND" ItemName="接地状态" DataType="double" Width="1" TID="0" Path="/DDK2" Enable="1"/>
+    <Item CodeName="g_DDK2_XuanKong" ItemName="悬空状态" DataType="double" Width="1" TID="0" Path="/DDK2" Enable="1"/>
+    
+    <Item CodeName="g_dAmp" ItemName="电流" DataType="double" Width="5" TID="0" Path="/" Enable="0"/>
+    <Item CodeName="ADValue[0]" ItemName="AD0" DataType="double" Width="64" TID="0" Path="/AD0" Enable="0"/>
+    <Item CodeName="ADValue[1]" ItemName="AD1" DataType="double" Width="32" TID="0" Path="/AD1" Enable="0"/>
+    <!-- AD0 -->
+	<Item CodeName="ADValue[0][AD0::FDJDH发动机点火指令1遥测]" ItemName="发动机点火指令1遥测" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::FDJDH发动机点火指令2遥测]" ItemName="发动机点火指令2遥测" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::NLDJS内联动解锁曳光管点火指令1遥测]" ItemName="内联动解锁曳光管点火指令1遥测" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::YJKZDH硬件控制点火指令1遥测]" ItemName="硬件控制点火指令1遥测" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::DDXH弹动信号1_1遥测]" ItemName="弹动信号1_1遥测" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::DDXH弹动信号1_2遥测]" ItemName="弹动信号1_2遥测" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::YJKZDH硬件控制点火指令2遥测]" ItemName="硬件控制点火指令2遥测" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::GCZ15惯测正15V遥测]" ItemName="惯测+15V遥测" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::GCZ5惯测正5V遥测]" ItemName="惯测+5V遥测" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::GCF15惯测负15V遥测]" ItemName="惯测-15V遥测" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::GCF5惯测负5V遥测]" ItemName="惯测-5V遥测" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::RQDNLD燃气舵内联动解锁曳光管点火指令2遥测]" ItemName="燃气舵内联动解锁曳光管点火指令2遥测" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::Z5VYC主5V遥测]" ItemName="主5V遥测" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::Z15VYC正15V遥测]" ItemName="+15V遥测" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::F15VYC负15V遥测]" ItemName="-15V遥测" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::RQDNLD燃气舵内联动解锁曳光管点火1]" ItemName="燃气舵内联动解锁曳光管点火1" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::RQDNLD燃气舵内联动解锁曳光管点火1遥测]" ItemName="燃气舵内联动解锁曳光管点火1遥测" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::FDJDH发动机点火1]" ItemName="发动机点火1" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::FDJDH发动机点火1遥测]" ItemName="发动机点火1遥测" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::RQDNLD燃气舵内联动解锁曳光管点火2]" ItemName="燃气舵内联动解锁曳光管点火2" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::RQDNLD燃气舵内联动解锁曳光管点火2遥测]" ItemName="燃气舵内联动解锁曳光管点火2遥测" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::FDJDH发动机点火2]" ItemName="发动机点火2" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::FDJDH发动机点火2遥测]" ItemName="发动机点火2遥测" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::DQKZ电气控制正5V1遥测]" ItemName="电气控制+5V1遥测" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::DQKZ电气控制正5V2遥测]" ItemName="电气控制+5V2遥测" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::ECDY二次电源正15V遥测]" ItemName="二次电源+15V遥测" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::ECDY二次电源负15V遥测]" ItemName="二次电源-15V遥测" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::ECDY二次电源正5V遥测]" ItemName="二次电源+5V遥测" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::ECDY二次电源负5V遥测]" ItemName="二次电源-5V遥测" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::N14舵BIT信号]" ItemName="14舵BIT信号(采集)" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::N23舵BIT信号]" ItemName="23舵BIT信号(采集)" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::DJCX舵机舱X1向振动]" ItemName="舵机舱X1向振动" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::DJCY舵机舱Y1向振动]" ItemName="舵机舱Y1向振动" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::DJCZ舵机舱Z1向振动]" ItemName="舵机舱Z1向振动" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+
+    <Item CodeName="ADValue[0][AD0::N14舵系统BIT信号_舵系统预留]" ItemName="14舵系统BIT信号_舵系统预留" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+    <Item CodeName="ADValue[0][AD0::N23舵系统BIT信号_舵系统预留]" ItemName="23舵系统BIT信号_舵系统预留" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+    <Item CodeName="ADValue[0][AD0::DXT舵系统27VA控制电压遥测_舵系统预留]" ItemName="舵系统27VA控制电压遥测_舵系统预留" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+    <Item CodeName="ADValue[0][AD0::DXT舵系统27VB控制电压遥测_舵系统预留]" ItemName="舵系统27VB控制电压遥测_舵系统预留" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+    <Item CodeName="ADValue[0][AD0::GLDY功率电源1电压遥测_舵系统预留]" ItemName="功率电源1电压遥测_舵系统预留" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+    <Item CodeName="ADValue[0][AD0::GLDY功率电源2电压遥测_舵系统预留]" ItemName="功率电源2电压遥测_舵系统预留" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+    <Item CodeName="ADValue[0][AD0::GLDY功率电源3电压遥测_舵系统预留]" ItemName="功率电源3电压遥测_舵系统预留" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+    <Item CodeName="ADValue[0][AD0::GLDY功率电源4电压遥测_舵系统预留]" ItemName="功率电源4电压遥测_舵系统预留" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+    <Item CodeName="ADValue[0][AD0::WDCGQ温度传感器_舵系统预留]" ItemName="温度传感器_舵系统预留" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+    <Item CodeName="ADValue[0][AD0::CH43]" ItemName="AD0::CH43" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+    <Item CodeName="ADValue[0][AD0::CH44]" ItemName="AD0::CH44" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+    <Item CodeName="ADValue[0][AD0::CH45]" ItemName="AD0::CH45" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+    <Item CodeName="ADValue[0][AD0::CH46]" ItemName="AD0::CH46" DataType="double" Width="1" TID="0" Path="/AD0" Enable="0"/>
+
+
+    <!-- AD0: 电源状态 -->
+	<Item CodeName="ADValue[0][AD0::DGLDY大功率电源输出电流监视]" ItemName="功率电源电流" DataType="double" Width="1" TID="0" Path="/SystemDeviceStatus" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::DY27电源27V0输出电压监视]" ItemName="27V[0]输出电压" DataType="double" Width="1" TID="0" Path="/SystemDeviceStatus" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::DY27电源27V1输出电压监视]" ItemName="27V[1]输出电压" DataType="double" Width="1" TID="0" Path="/SystemDeviceStatus" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::DY27电源27V2输出电压监视]" ItemName="27V[2]输出电压" DataType="double" Width="1" TID="0" Path="/SystemDeviceStatus" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::DY27电源27V3输出电压监视]" ItemName="27V[3]输出电压" DataType="double" Width="1" TID="0" Path="/SystemDeviceStatus" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::DGLDY大功率电源电压输出电压监视]" ItemName="功率电源电压" DataType="double" Width="1" TID="0" Path="/SystemDeviceStatus" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::XGLDY小功率60V电源输出电压监视]" ItemName="60V(C)电源电压" DataType="double" Width="1" TID="0" Path="/SystemDeviceStatus" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::DY电源正15V输出电压监视]" ItemName="+15V电源电压" DataType="double" Width="1" TID="0" Path="/SystemDeviceStatus" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::DY电源负15V电源输出电压监视]" ItemName="-15V电源电压" DataType="double" Width="1" TID="0" Path="/SystemDeviceStatus" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::DY电源5V输出电压监视]" ItemName="主5V电源电压" DataType="double" Width="1" TID="0" Path="/SystemDeviceStatus" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::DY电源5V1输出电压监视]" ItemName="5V1电源电压" DataType="double" Width="1" TID="0" Path="/SystemDeviceStatus" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::DY电源5V2输出电压监视]" ItemName="5V2电源电压" DataType="double" Width="1" TID="0" Path="/SystemDeviceStatus" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::DY电源正15V输出电流监视]" ItemName="+15V电源电流" DataType="double" Width="1" TID="0" Path="/SystemDeviceStatus" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::DY电源负15V输出电流监视]" ItemName="-15V电源电流" DataType="double" Width="1" TID="0" Path="/SystemDeviceStatus" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::DY电源5V输出电流监视]" ItemName="主5V电源电流" DataType="double" Width="1" TID="0" Path="/SystemDeviceStatus" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::DY电源5V1输出电流监视]" ItemName="5V1电源电流" DataType="double" Width="1" TID="0" Path="/SystemDeviceStatus" Enable="0"/>
+	<Item CodeName="ADValue[0][AD0::DY电源5V2输出电流监视]" ItemName="5V2电源电流" DataType="double" Width="1" TID="0" Path="/SystemDeviceStatus" Enable="0"/>
+	
+	<!-- AD1 -->
+	<Item CodeName="ADValue[1][AD1::DDXH弹动信号2检测]" ItemName="弹动信号2检测" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+	<Item CodeName="ADValue[1][AD1::KO7]" ItemName="KO7" DataType="double" Width="1" TID="0" Path="/AD1" Enable="1"/>
+	<Item CodeName="ADValue[1][AD1::DZL舵指令U1遥测]" ItemName="舵指令U1遥测" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+	<Item CodeName="ADValue[1][AD1::DZL舵指令U2遥测]" ItemName="舵指令U2遥测" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+	<Item CodeName="ADValue[1][AD1::DZL舵指令U3遥测]" ItemName="舵指令U3遥测" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+	<Item CodeName="ADValue[1][AD1::DZL舵指令U4遥测]" ItemName="舵指令U4遥测" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+	<Item CodeName="ADValue[1][AD1::DZL舵指令U1]" ItemName="舵指令U1(采集)" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+	<Item CodeName="ADValue[1][AD1::DZL舵指令U2]" ItemName="舵指令U2(采集)" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+	<Item CodeName="ADValue[1][AD1::DZL舵指令U3]" ItemName="舵指令U3(采集)" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+	<Item CodeName="ADValue[1][AD1::DZL舵指令U4]" ItemName="舵指令U4(采集)" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+	<Item CodeName="ADValue[1][AD1::N1舵反馈电压]" ItemName="1舵反馈电压(采集)" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+	<Item CodeName="ADValue[1][AD1::N2舵反馈电压]" ItemName="2舵反馈电压(采集)" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+	<Item CodeName="ADValue[1][AD1::N3舵反馈电压]" ItemName="3舵反馈电压(采集)" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+	<Item CodeName="ADValue[1][AD1::N4舵反馈电压]" ItemName="4舵反馈电压(采集)" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+	<Item CodeName="ADValue[1][AD1::FZMN负载模拟铰链力矩信号1]" ItemName="负载模拟铰链力矩信号1" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+	<Item CodeName="ADValue[1][AD1::FZMN负载模拟铰链力矩信号2]" ItemName="负载模拟铰链力矩信号2" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+	<Item CodeName="ADValue[1][AD1::FZMN负载模拟铰链力矩信号3]" ItemName="负载模拟铰链力矩信号3" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+	<Item CodeName="ADValue[1][AD1::FZMN负载模拟铰链力矩信号4]" ItemName="负载模拟铰链力矩信号4" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+
+    <Item CodeName="ADValue[1][AD1::N1舵反馈_舵系统备份]" ItemName="1舵反馈_舵系统备份" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+    <Item CodeName="ADValue[1][AD1::N2舵反馈_舵系统备份]" ItemName="2舵反馈_舵系统备份" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+    <Item CodeName="ADValue[1][AD1::N3舵反馈_舵系统备份]" ItemName="3舵反馈_舵系统备份" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+    <Item CodeName="ADValue[1][AD1::N4舵反馈_舵系统备份]" ItemName="4舵反馈_舵系统备份" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+    <Item CodeName="ADValue[1][AD1::DXY舵1电机电流_遥测信号]" ItemName="舵1电机电流_遥测信号" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+    <Item CodeName="ADValue[1][AD1::DXY舵2电机电流_遥测信号]" ItemName="舵2电机电流_遥测信号" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+    <Item CodeName="ADValue[1][AD1::DXY舵3电机电流_遥测信号]" ItemName="舵3电机电流_遥测信号" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+    <Item CodeName="ADValue[1][AD1::DXY舵4电机电流_遥测信号]" ItemName="舵4电机电流_遥测信号" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+    <Item CodeName="ADValue[1][AD1::DXY舵1电机电流_遥测信号_舵系统备份]" ItemName="舵1电机电流_遥测信号_舵系统备份" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+    <Item CodeName="ADValue[1][AD1::DXY舵2电机电流_遥测信号_舵系统备份]" ItemName="舵2电机电流_遥测信号_舵系统备份" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+    <Item CodeName="ADValue[1][AD1::DXY舵3电机电流_遥测信号_舵系统备份]" ItemName="舵3电机电流_遥测信号_舵系统备份" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+    <Item CodeName="ADValue[1][AD1::DXY舵4电机电流_遥测信号_舵系统备份]" ItemName="舵4电机电流_遥测信号_舵系统备份" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+
+    <Item CodeName="ADValue[1][AD1::JHH激活好遥测]" ItemName="激活好遥测" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+	<Item CodeName="ADValue[1][AD1::JHH激活好]" ItemName="激活好" DataType="double" Width="1" TID="0" Path="/AD1" Enable="0"/>
+
+	<!-- DA -->
+	<Item CodeName="DAValue[DA0::DZL1舵指令U1]" ItemName="舵指令U1(激励)" DataType="double" Width="1" TID="0" Path="/DA" Enable="0"/>
+	<Item CodeName="DAValue[DA0::DZL2舵指令U2]" ItemName="舵指令U2(激励)" DataType="double" Width="1" TID="0" Path="/DA" Enable="0"/>
+	<Item CodeName="DAValue[DA0::DZL3舵指令U3]" ItemName="舵指令U3(激励)" DataType="double" Width="1" TID="0" Path="/DA" Enable="0"/>
+	<Item CodeName="DAValue[DA0::DZL4舵指令U4]" ItemName="舵指令U4(激励)" DataType="double" Width="1" TID="0" Path="/DA" Enable="0"/>
+	<Item CodeName="DAValue[DA0::DZL1舵指令U1_舵系统预留]" ItemName="舵指令输出U1_舵系统预留" DataType="double" Width="1" TID="0" Path="/DA" Enable="0"/>
+	<Item CodeName="DAValue[DA0::DZL2舵指令U2_舵系统预留]" ItemName="舵指令输出U2_舵系统预留" DataType="double" Width="1" TID="0" Path="/DA" Enable="0"/>
+	<Item CodeName="DAValue[DA0::DZL3舵指令U3_舵系统预留]" ItemName="舵指令输出U3_舵系统预留" DataType="double" Width="1" TID="0" Path="/DA" Enable="0"/>
+	<Item CodeName="DAValue[DA0::DZL4舵指令U4_舵系统预留]" ItemName="舵指令输出U4_舵系统预留" DataType="double" Width="1" TID="0" Path="/DA" Enable="0"/>
+	<Item CodeName="DAValue[DA0::DFK1舵反馈1_飞控预留]" ItemName="舵反馈1_飞控预留" DataType="double" Width="1" TID="0" Path="/DA" Enable="0"/>
+	<Item CodeName="DAValue[DA0::DFK2舵反馈2_飞控预留]" ItemName="舵反馈2_飞控预留" DataType="double" Width="1" TID="0" Path="/DA" Enable="0"/>
+	<Item CodeName="DAValue[DA0::DFK3舵反馈3_飞控预留]" ItemName="舵反馈3_飞控预留" DataType="double" Width="1" TID="0" Path="/DA" Enable="0"/>
+	<Item CodeName="DAValue[DA0::DFK4舵反馈4_飞控预留]" ItemName="舵反馈4_飞控预留" DataType="double" Width="1" TID="0" Path="/DA" Enable="0"/>
+	<Item CodeName="DAValue[DA0::DKZL舵控指令_旋转弹]" ItemName="舵控指令_旋转弹" DataType="double" Width="1" TID="0" Path="/DA" Enable="0"/>
+    <Item CodeName="DAValue[DA0::CH13]" ItemName="DA0::CH13" DataType="double" Width="1" TID="0" Path="/DA" Enable="0"/>
+    <Item CodeName="DAValue[DA0::CH14]" ItemName="DA0::CH14" DataType="double" Width="1" TID="0" Path="/DA" Enable="0"/>
+    <Item CodeName="DAValue[DA0::CH15]" ItemName="DA0::CH15" DataType="double" Width="1" TID="0" Path="/DA" Enable="0"/>
+
+    <!-- DI -->
+    <Item CodeName="DIValue" ItemName="DI0" DataType="uint8" Width="32" TID="0" Path="/DI" Enable="0"/>
+    <Item CodeName="DIValue[DI0::DDXHY弹动信号2遥测]" ItemName="弹动信号2遥测" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+	<Item CodeName="DIValue[DI0::FDJDH发动机点火1DSP指令]" ItemName="发动机点火1DSP指令" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+	<Item CodeName="DIValue[DI0::FDJDH发动机点火2DSP指令]" ItemName="发动机点火2DSP指令" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+	<Item CodeName="DIValue[DI0::NLDJS内联动解锁曳光管点火1DSP指令]" ItemName="内联动解锁曳光管点火1DSP指令" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+	<Item CodeName="DIValue[DI0::NLDJS内联动解锁曳光管点火2DSP指令]" ItemName="内联动解锁曳光管点火2DSP指令" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+	<Item CodeName="DIValue[DI0::FDJDH发动机点火指令1KO1]" ItemName="发动机点火指令1KO1" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+	<Item CodeName="DIValue[DI0::FDJDH发动机点火指令2KO2]" ItemName="发动机点火指令2KO2" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+	<Item CodeName="DIValue[DI0::YJKZDH硬件控制点指令火1KO5]" ItemName="硬件控制点指令火1KO5" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+	<Item CodeName="DIValue[DI0::YJKZDH硬件控制点指令火2KO6]" ItemName="硬件控制点指令火2KO6" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+	<Item CodeName="DIValue[DI0::NLDJS内联动解锁曳光管点火指令1KO3]" ItemName="内联动解锁曳光管点火指令1KO3" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+	<Item CodeName="DIValue[DI0::NLDJS内联动解锁曳光管点火指令2KO4]" ItemName="内联动解锁曳光管点火指令2KO4" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+    <Item CodeName="DIValue[DI0::CH11]" ItemName="DI0::CH11" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+    <Item CodeName="DIValue[DI0::CH12]" ItemName="DI0::CH12" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+    <Item CodeName="DIValue[DI0::CH13]" ItemName="DI0::CH13" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+    <Item CodeName="DIValue[DI0::CH14]" ItemName="DI0::CH14" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+    <Item CodeName="DIValue[DI0::CH15]" ItemName="DI0::CH15" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+    <Item CodeName="DIValue[DI0::CH16]" ItemName="DI0::CH16" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+    <Item CodeName="DIValue[DI0::CH17]" ItemName="DI0::CH17" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+    <Item CodeName="DIValue[DI0::CH18]" ItemName="DI0::CH18" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+    <Item CodeName="DIValue[DI0::CH19]" ItemName="DI0::CH19" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+    <Item CodeName="DIValue[DI0::CH20]" ItemName="DI0::CH20" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+    <Item CodeName="DIValue[DI0::CH21]" ItemName="DI0::CH21" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+    <Item CodeName="DIValue[DI0::CH22]" ItemName="DI0::CH22" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+    <Item CodeName="DIValue[DI0::CH23]" ItemName="DI0::CH23" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+    <Item CodeName="DIValue[DI0::CH24]" ItemName="DI0::CH24" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+    <Item CodeName="DIValue[DI0::CH25]" ItemName="DI0::CH25" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+    <Item CodeName="DIValue[DI0::CH26]" ItemName="DI0::CH26" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+    <Item CodeName="DIValue[DI0::CH27]" ItemName="DI0::CH27" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+    <Item CodeName="DIValue[DI0::CH28]" ItemName="DI0::CH28" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+    <Item CodeName="DIValue[DI0::CH29]" ItemName="DI0::CH29" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+    <Item CodeName="DIValue[DI0::CH30]" ItemName="DI0::CH30" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+    <Item CodeName="DIValue[DI0::CH31]" ItemName="DI0::CH31" DataType="uint8" Width="1" TID="0" Path="/DI" Enable="0"/>
+
+    <!-- DO -->
+	<Item CodeName="DOValue[DO0::BCSJ补偿数据Flash写控制]" ItemName="补偿数据Flash写控制" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+
+    <Item CodeName="DOValue[DO0::CH1]" ItemName="DO0::CH1" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+    <Item CodeName="DOValue[DO0::CH2]" ItemName="DO0::CH2" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+
+    <Item CodeName="DOValue[DO0::N14舵系统BIT信号]" ItemName="14舵BIT信号(激励)" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+	<Item CodeName="DOValue[DO0::N23舵系统BIT信号]" ItemName="23舵BIT信号(激励)" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+	<Item CodeName="DOValue[DO0::DYTBIT导引头BIT信号]" ItemName="导引头BIT信号(激励)" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+	<Item CodeName="DOValue[DO0::YXBIT引信BIT信号]" ItemName="引信BIT信号(激励)" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+	<Item CodeName="DOValue[DO0::CXFXKZ程序Flash写控制]" ItemName="程序Flash写控制" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+	<Item CodeName="DOValue[DO0::DDXH2弹动信号2_继电器控制]" ItemName="弹动信号2_继电器控制" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+	<Item CodeName="DOValue[DO0::CSBH1测试保护1]" ItemName="测试保护1" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+	<Item CodeName="DOValue[DO0::CSBH2测试保护2]" ItemName="测试保护2" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+	<Item CodeName="DOValue[DO0::CXFXKZ程序Flash写控制_继电器控制]" ItemName="程序Flash写控制_继电器控制" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+	<Item CodeName="DOValue[DO0::BCSJ补偿数据Flash写控制_继电器控制]" ItemName="补偿数据Flash写控制_继电器控制" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+	<Item CodeName="DOValue[DO0::DDXH1弹动信号1_1_继电器控制]" ItemName="弹动信号1_1_继电器控制" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+	<Item CodeName="DOValue[DO0::DDXH2弹动信号1_2_继电器控制]" ItemName="弹动信号1_2_继电器控制" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+
+    <Item CodeName="DOValue[DO0::CH15]" ItemName="DO0::CH15" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+    <Item CodeName="DOValue[DO0::CH16]" ItemName="DO0::CH16" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+    <Item CodeName="DOValue[DO0::CH17]" ItemName="DO0::CH17" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+    <Item CodeName="DOValue[DO0::CH18]" ItemName="DO0::CH18" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+    <Item CodeName="DOValue[DO0::CH19]" ItemName="DO0::CH19" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+    <Item CodeName="DOValue[DO0::CH20]" ItemName="DO0::CH20" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+
+    <Item CodeName="DOValue[DO0::WYDYS稳压电源输入控制开关K11]" ItemName="稳压电源输入控制开关K11" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+	<Item CodeName="DOValue[DO0::FKWYD飞控稳压电源开关K1]" ItemName="飞控稳压电源开关K1" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+	<Item CodeName="DOValue[DO0::FK60VC飞控60VC电源开关K2]" ItemName="飞控60VC电源开关K2" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+	<Item CodeName="DOValue[DO0::FK27VA飞控27VA电源开关K3]" ItemName="飞控27VA电源开关K3" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+	<Item CodeName="DOValue[DO0::FK27VB飞控27VB电源开关K4]" ItemName="飞控27VB电源开关K4" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+	<Item CodeName="DOValue[DO0::MGYJZ敏感元件组合27VB开关K5]" ItemName="敏感元件组合27VB开关K5" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+	<Item CodeName="DOValue[DO0::D15V舵15V电源开关K6]" ItemName="舵±15V电源开关K6" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+	<Item CodeName="DOValue[DO0::D27VA舵27VA电源开关K7]" ItemName="舵27VA电源开关K7" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+	<Item CodeName="DOValue[DO0::D27VB舵27VB电源开关K8]" ItemName="舵27VB电源开关K8" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+	<Item CodeName="DOValue[DO0::D60VC舵60VC电源开关K10]" ItemName="舵60VC大功率电源开关K10" DataType="uint8" Width="1" TID="0" Path="/DO" Enable="0"/>
+		
+  </Variables>
+
+	<InputPorts>
+	</InputPorts>
+
+	<OutputPorts>
+	</OutputPorts>
+
+</TaskDefinition>

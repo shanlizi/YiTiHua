@@ -1,0 +1,45 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (D:\WorksSpace-2\Models\ZhengJiCeShi\JianLiLianJie\\RtssDebug\) contains files shared from another project (JianLiLianJie.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Generating task information file...
+  argv[1]: D:\WorksSpace-2\Models\ZhengJiCeShi\JianLiLianJie\ModelConfig.xml
+  argv[2]: D:\WorksSpace-2\Models\ZhengJiCeShi\Bin
+  ****** Generating HwTaskInfo.cpp...
+  HwTaskInfo.cpp
+  ****** Windows (RTX x64) ******
+  HwUserApp.cpp
+  ****** Windows (RTX x64) ******
+HwUserApp.cpp(140): warning C4838: conversion from 'double' to 'float' requires a narrowing conversion
+HwUserApp.cpp(140): warning C4305: 'initializing': truncation from 'double' to 'float'
+HwUserApp.cpp(583): warning C4244: '=': conversion from 'double' to 'hw_uint32', possible loss of data
+HwUserApp.cpp(614): warning C4244: '=': conversion from 'double' to 'hw_uint32', possible loss of data
+HwUserApp.cpp(627): warning C4800: 'hw_uint32': forcing value to bool 'true' or 'false' (performance warning)
+HwUserApp.cpp(768): warning C4244: '=': conversion from 'hw_int64' to 'hw_uint32', possible loss of data
+HwUserApp.cpp(792): warning C4244: '=': conversion from 'hw_int64' to 'hw_uint32', possible loss of data
+HwUserApp.cpp(843): warning C4244: '=': conversion from 'hw_int64' to 'hw_uint32', possible loss of data
+HwUserApp.cpp(867): warning C4244: '=': conversion from 'hw_int64' to 'hw_uint32', possible loss of data
+HwUserApp.cpp(899): warning C4244: '=': conversion from 'double' to 'hw_uint32', possible loss of data
+HwUserApp.cpp(1361): warning C4800: 'hw_uint8': forcing value to bool 'true' or 'false' (performance warning)
+HwUserApp.cpp(769): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'hw_int64'
+  HwUserApp.cpp(769): note: consider using '%lld' in the format string
+  HwUserApp.cpp(769): note: consider using '%Id' in the format string
+  HwUserApp.cpp(769): note: consider using '%I64d' in the format string
+HwUserApp.cpp(793): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'hw_int64'
+  HwUserApp.cpp(793): note: consider using '%lld' in the format string
+  HwUserApp.cpp(793): note: consider using '%Id' in the format string
+  HwUserApp.cpp(793): note: consider using '%I64d' in the format string
+HwUserApp.cpp(844): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'hw_int64'
+  HwUserApp.cpp(844): note: consider using '%lld' in the format string
+  HwUserApp.cpp(844): note: consider using '%Id' in the format string
+  HwUserApp.cpp(844): note: consider using '%I64d' in the format string
+HwUserApp.cpp(868): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'hw_int64'
+  HwUserApp.cpp(868): note: consider using '%lld' in the format string
+  HwUserApp.cpp(868): note: consider using '%Id' in the format string
+  HwUserApp.cpp(868): note: consider using '%I64d' in the format string
+  Generating Code...
+LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/RELEASE' specification
+     Creating library D:\WorksSpace-2\Models\ZhengJiCeShi\JianLiLianJie\\RtssDebug\ZhengJiCeShi.lib and object D:\WorksSpace-2\Models\ZhengJiCeShi\JianLiLianJie\\RtssDebug\ZhengJiCeShi.exp
+hwrtxutil64.lib(HwIniUtil.obj) : warning LNK4099: PDB 'hwrtxutil.pdb' was not found with 'hwrtxutil64.lib(HwIniUtil.obj)' or at 'D:\WorksSpace-2\Models\ZhengJiCeShi\JianLiLianJie\RtssDebug\hwrtxutil.pdb'; linking object as if no debug info
+hwrtxutil64.lib(HwUtilityRt.obj) : warning LNK4099: PDB 'hwrtxutil.pdb' was not found with 'hwrtxutil64.lib(HwUtilityRt.obj)' or at 'D:\WorksSpace-2\Models\ZhengJiCeShi\JianLiLianJie\RtssDebug\hwrtxutil.pdb'; linking object as if no debug info
+  JianLiLianJie.vcxproj -> D:\WorksSpace-2\Models\ZhengJiCeShi\JianLiLianJie\\RtssDebug\ZhengJiCeShi.rtdll
+  JianLiLianJie.vcxproj -> D:\WorksSpace-2\Models\ZhengJiCeShi\JianLiLianJie\\RtssDebug\ZhengJiCeShi.pdb (Full PDB)
+  Stamptool: Successfully stamped file 'D:\WorksSpace-2\Models\ZhengJiCeShi\JianLiLianJie\\RtssDebug\ZhengJiCeShi.rtdll'!
+  已复制         1 个文件。
